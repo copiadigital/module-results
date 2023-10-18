@@ -10,6 +10,7 @@ class ResultsServiceProvider implements Provider
     {
         return [
             CommandServiceProvider::class,
+            RegisterPostType::class,
         ];
     }
 

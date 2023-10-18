@@ -20,11 +20,11 @@ class ResultsCommand extends \WP_CLI_Command
         $controller_plugin_dir = RESULTS_PLUGIN_DIR . 'templates/ResultsTab/Controller/Results.php';
         $controller_theme_dir = get_stylesheet_directory() . '/app/View/Composers/Results.php';
 
-        $field_plugin_dir = RESULTS_PLUGIN_DIR . 'templates/ResultsTab/Fields/Partials/Results.php';
-        $field_theme_dir = get_stylesheet_directory() . '/app/Fields/Partials/Builder/Layouts/Results.php';
+        $field_plugin_dir = RESULTS_PLUGIN_DIR . 'templates/ResultsTab/Fields/Results.php';
+        $field_theme_dir = get_stylesheet_directory() . '/app/Fields/Results.php';
 
-        $field_partial_plugin_dir = RESULTS_PLUGIN_DIR . 'templates/ResultsTab/Fields/Results.php';
-        $field_partial_theme_dir = get_stylesheet_directory() . '/app/Fields/Results.php';
+        $field_partial_plugin_dir = RESULTS_PLUGIN_DIR . 'templates/ResultsTab/Fields/Partials/Results.php';
+        $field_partial_theme_dir = get_stylesheet_directory() . '/app/Fields/Partials/Builder/Layouts/Results.php';
 
         if(!copy($views_plugin_dir, $views_theme_dir)) {
             echo "\nfailed to copy $views_plugin_dir to $views_theme_dir...\n";

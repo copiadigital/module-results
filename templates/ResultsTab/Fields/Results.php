@@ -14,10 +14,6 @@ class Results extends Field
      */
     public function fields()
     {
-        if(!get_field('enable_cpt_results', 'option')) {
-            return;
-        }
-
         $Results = new FieldsBuilder('results', [
             'title' => 'Fields',
             'menu_order' => 0,
