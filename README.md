@@ -32,3 +32,16 @@
       return $types;
     });
    ```
+
+---
+3. ### Enabling results in page builder
+
+  To enable results builder layout, go to `Builder.php` under to your sage theme. Search Calendar and uncomment it.
+  
+  _Uncomment this line of code:_
+  ```sh
+  // ->addLayout($this->get(Results::class), [
+  //     'label' => 'Results',
+  //     'display' => 'block',
+  // ])
+  ```
