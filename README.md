@@ -18,7 +18,6 @@
    _Run from your local machine, in a new terminal tab_
    ```sh
    wp results results_with_type
-   yarn
    ```
 
 ---
