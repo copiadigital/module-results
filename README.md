@@ -30,6 +30,6 @@
    ```sh
     add_filter( 'results_tax_before_insert', function ( $types ) {
       unset($types[1]);
-    return $types;
+      return $types;
     });
    ```
