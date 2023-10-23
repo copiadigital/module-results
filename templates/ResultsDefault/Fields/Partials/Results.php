@@ -14,11 +14,15 @@ class Results extends Partial
      */
     public function fields()
     {
+        if(!is_plugin_active('results/results.php')) {
+            return;
+        }
+
         $Results = new FieldsBuilder('results');
 
         $Results
             ->addText('title', [
-                'label' => 'title',
+                'label' => 'Title',
                 'instructions' => 'Please enter a title to appear above the results.',
             ]);
         return $Results;

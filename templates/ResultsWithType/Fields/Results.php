@@ -14,6 +14,10 @@ class Results extends Field
      */
     public function fields()
     {
+        if(!is_plugin_active('results/results.php')) {
+            return;
+        }
+
         $Results = new FieldsBuilder('results', [
             'title' => 'Fields',
             'menu_order' => 0,
