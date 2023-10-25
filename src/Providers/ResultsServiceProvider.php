@@ -2,7 +2,8 @@
 
 namespace Results\Providers;
 
-use Results\View\Composers\App;
+use Illuminate\Support\Facades\View;
+use Results\View\Composers\Results;
 
 class ResultsServiceProvider implements Provider
 {
@@ -23,6 +24,12 @@ class ResultsServiceProvider implements Provider
 
     public function boot()
     {
+        if ( function_exists( '\Roots\view' ) ) {
+            \Roots\view()->addNamespace('Results', RESULTS_PLUGIN_DIR . 'resources/views/');
 
+            // \Roots\view('Results::partials.builder.results', ['test' => 'variable'])->render();
+        }
+
+        View::composer('Results::partials.builder.results', Results::class);
     }
 }
