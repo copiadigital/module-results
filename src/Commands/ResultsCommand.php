@@ -10,6 +10,30 @@ class ResultsCommand extends \WP_CLI_Command
     }
 
     /**
+     * command usage: wp results results_init
+     */
+    public function results_init()
+    {
+        $field_plugin_dir = RESULTS_PLUGIN_DIR . 'templates/ResultsDefault/Fields/Results.php';
+        $field_theme_dir = get_stylesheet_directory() . '/app/Fields/Results.php';
+
+        $field_partial_plugin_dir = RESULTS_PLUGIN_DIR . 'templates/ResultsDefault/Fields/Partials/Results.php';
+        $field_partial_theme_dir = get_stylesheet_directory() . '/app/Fields/Partials/Builder/Layouts/Results.php';
+
+        if(!copy($field_plugin_dir, $field_theme_dir)) {
+            echo "\nfailed to copy $field_plugin_dir to $field_theme_dir...\n";
+        }else {
+            echo "\nSuccessfully copy $field_plugin_dir to $field_theme_dir...\n";
+        }
+
+        if(!copy($field_partial_plugin_dir, $field_partial_theme_dir)) {
+            echo "\nfailed to copy $field_partial_plugin_dir to $field_partial_theme_dir...\n";
+        }else {
+            echo "\nSuccessfully copy $field_partial_plugin_dir to $field_partial_theme_dir...\n";
+        }
+    }
+
+    /**
      * command usage: wp results results_default
      */
     public function results_default()
