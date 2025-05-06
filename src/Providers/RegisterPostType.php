@@ -20,7 +20,7 @@ class RegisterPostType implements Provider
 
         array_push($types, CPT::createPostType('results', 'Results', 'Results')
             ->setPublic(true)
-            ->setMenuPosition(27)
+            ->setMenuPosition(28)
             ->setMenuIcon('dashicons-list-view')
             ->setSupports(['title', 'revisions'])
             ->setTaxonomies(['result_years'])
