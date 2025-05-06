@@ -5,7 +5,7 @@ namespace Results\Fields\Partials;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use Results\Providers\ResultsServiceProvider;
 
-class Calendar
+class Results
 {
     protected $fields;
 
