@@ -4,7 +4,7 @@
    
    _Run inside the php container_
    ```sh
-   php composer.phar require "copiadigital/results":"dev-master"
+   php composer.phar require "copiadigital/results":"dev-main"
    ```
 
 2. ### Activate the module
