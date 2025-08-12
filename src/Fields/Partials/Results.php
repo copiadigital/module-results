@@ -2,37 +2,25 @@
 
 namespace Results\Fields\Partials;
 
+use Log1x\AcfComposer\Partial;
 use StoutLogic\AcfBuilder\FieldsBuilder;
-use Results\Providers\ResultsServiceProvider;
 
-class Results
+class Results extends Partial
 {
-    protected $fields;
-
-    public function __construct()
-    {
-        $parent_layout_key = ResultsServiceProvider::$parent_layout_key;
-        $subfield_key = 'results';
-        $final_key = $parent_layout_key . '_' . $subfield_key;
-
-        $this->fields = new FieldsBuilder($final_key);
-
-        // $this->fields
-        //     ->addText('title', [
-        //         'label' => 'Title',
-        //         'required' => 0,
-        //         'maxlength' => false,
-        //         '_name' => 'title',
-        //     ]);
-    }
-
     /**
-     * Get the built fields for the partial
+     * The partial field group.
      *
      * @return array
      */
-    public function register(): array
+    public function fields()
     {
-        return $this->fields->build();
+        $Fields = new FieldsBuilder('results');
+
+        // $Fields
+        //     ->addText('title', [
+        //         'label' => 'Title',
+        //     ]);
+
+        return $Fields;
     }
 }
