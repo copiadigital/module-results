@@ -3,7 +3,7 @@
 namespace Results\Fields;
 
 use Log1x\AcfComposer\Field;
-use StoutLogic\AcfBuilder\FieldsBuilder;
+use Log1x\AcfComposer\Builder;
 
 class Results extends Field
 {
@@ -14,7 +14,7 @@ class Results extends Field
      */
     public function fields()
     {
-        $Results = new FieldsBuilder('results', [
+        $Fields = Builder::make('results', [
             'title' => 'Fields',
             'menu_order' => 0,
             'position' => 'acf_after_title',
@@ -25,10 +25,10 @@ class Results extends Field
             'show_in_rest' => 0,
         ]);
 
-        $Results
+        $Fields
             ->setLocation('post_type', '==', 'results');
 
-        $Results
+        $Fields
             ->addTaxonomy('year', [
                 'label' => 'Year',
                 'taxonomy' => 'result_years',
@@ -64,6 +64,6 @@ class Results extends Field
                 'mime_types' => 'pdf',
             ]);
 
-        return $Results->build();
+        return $Fields->build();
     }
 }

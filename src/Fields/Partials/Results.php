@@ -3,7 +3,7 @@
 namespace Results\Fields\Partials;
 
 use Log1x\AcfComposer\Partial;
-use StoutLogic\AcfBuilder\FieldsBuilder;
+use Log1x\AcfComposer\Builder;
 
 class Results extends Partial
 {
@@ -14,7 +14,7 @@ class Results extends Partial
      */
     public function fields()
     {
-        $Fields = new FieldsBuilder('results');
+        $Fields = Builder::make('results');
 
         // $Fields
         //     ->addText('title', [
