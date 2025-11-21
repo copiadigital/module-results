@@ -16,6 +16,6 @@ class RegisterAssets implements Provider
 
     public function enqueue()
     {
-        // wp_enqueue_script('results', asset('scripts/modules/results.js')->uri(), ['vendor', 'jquery'], null, true);
+        
     }
 }
