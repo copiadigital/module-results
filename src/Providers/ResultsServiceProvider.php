@@ -3,6 +3,7 @@
 namespace Results\Providers;
 
 use Illuminate\Support\Facades\View;
+use Results\Callbacks\Admin;
 use Results\Fields\Results as ResultsField;
 use Results\Fields\Partials\Results as ResultsBuilderField;
 use Results\View\Composers\Results as ResultsComposer;
@@ -58,9 +59,10 @@ class ResultsServiceProvider implements Provider
         foreach ($this->providers() as $service) {
             (new $service)->register();
         }
-        
+
         $this->registerFields();
         $this->registerLayouts();
+        Admin::register();
     }
 
     public function boot()
